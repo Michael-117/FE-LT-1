@@ -9,6 +9,7 @@ Vue.use(Router);
 export enum Page {
   Hello = 'hello-world',
   NotFound = 'not-found',
+  Reddit = 'reddit'
 }
 
 export default new Router({
@@ -42,6 +43,17 @@ export default new Router({
         import(
           /* webpackChunkName: "not-found" */
           '@/pages/not-found'),
+    },
+    {
+      path: '/reddit',
+      name: Page.Reddit,
+      meta: {
+        layout: 'reddit',
+      },
+      component: () =>
+        import(
+          /* webpackChunkName: "not-found" */
+          '@/pages/reddit'),
     },
   ],
 });
